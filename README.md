@@ -2,7 +2,7 @@
 
 Design and implement a Postgres schema for a simplified Grubhub.
 
-> If you did Saturday's [Schema Design](https://github.com/CP-Evenings-and-Weekends/schema-design) challenge, you already drew an ERD for Grubhub.  **Pull that diagram back up** and use it as your starting point — today's job is to turn that design into actual Postgres tables, seed it with data, and query it.  If you didn't get to it Saturday, do that first.
+> If you did the optional [Schema Design](https://github.com/CP-Evenings-and-Weekends/schema-design) warm-up, you already drew an ERD for Grubhub — pull it back up. If not, no problem: sketch a quick ERD now before writing SQL.
 
 The included `init.sql`, `Dockerfile`, and `setup.sh` are wired up the same way as [cars-database](https://github.com/CP-Evenings-and-Weekends/cars-database).
 
@@ -21,13 +21,13 @@ Aim for the feature set Grubhub had at launch:
 
 ### 1. Confirm or revise the ERD
 
-Open Saturday's diagram (or create one if you skipped it) in [dbdiagram.io](https://dbdiagram.io/) or [Quick Database Diagrams](https://www.quickdatabasediagrams.com/).  Commit a screenshot as `erd.png` or a Mermaid `erDiagram` block as `erd.md`.
+Open your warm-up diagram (or create one now if you skipped it) in [dbdiagram.io](https://dbdiagram.io/) or [Quick Database Diagrams](https://www.quickdatabasediagrams.com/).  Commit a screenshot as `erd.png` or a Mermaid `erDiagram` block as `erd.md`.
 
 You'll likely have: `users`, `addresses`, `restaurants`, `cuisines`, `restaurant_cuisines` (join), `menu_items`, `orders`, `order_items` (join).
 
 ### 2. Implement in `init.sql`
 
-Translate the ERD into `CREATE TABLE` statements with primary keys, foreign keys, and constraints (`NOT NULL`, `UNIQUE`).  Follow the conventions from Saturday: plural lowercase table names, `id` primary keys, `_id` foreign keys.
+Translate the ERD into `CREATE TABLE` statements with primary keys, foreign keys, and constraints (`NOT NULL`, `UNIQUE`).  Conventions for your tables: plural, lowercase table names (`users`, `orders`); an `id` primary key on every table; `_id` suffixes on foreign keys (`user_id`). (This is Django's convention — you'll meet it again in Module 5.)
 
 ### 3. Seed it with data
 
